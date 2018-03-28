@@ -5,6 +5,7 @@ RUN yum -y install \
            libffi-dev \
            libyaml-dev \
            libssl-dev \
+           build-essential \
            libpython-dev \
            python \
            python-devel \
@@ -14,18 +15,23 @@ RUN yum -y install \
            aptitude \
            passwd \
            openssh \
-           openssh-server \
            openssh-clients \
-           sudo \
-           wget \
+           openssh-server \
            gcc make \
            openssl-devel \
            sqlite-devel \
            bzip2-devel \
-           git
+           rsyslog \
+           sudo \
+           wget \
+           which \
+           curl \
+           git \
+           git-core
 RUN yum install -y https://centos7.iuscommunity.org/ius-release.rpm
 RUN yum install -y python36u python36u-libs python36u-devel python36u-pip
 RUN pip3.6 install --upgrade pip
 RUN pip3.6 install --upgrade setuptools
 RUN pip3.6 install ansible
 RUN pip3.6 install virtualenv
+RUN pip3.6 install tox
